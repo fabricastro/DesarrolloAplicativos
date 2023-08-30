@@ -10,7 +10,7 @@ export const Header = () => {
     <>
       <section className="flex h-32 w-full items-center justify-between bg-purple-300 px-10 dark:bg-gray-900">
         <h1 className="text-3xl font-bold text-purple-900 dark:text-purple-200">
-          Proyecto Spotify
+          Valorant Wiki
         </h1>
         <button
           onClick={handleDark}
