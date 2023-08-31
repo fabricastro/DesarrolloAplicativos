@@ -1,6 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Header } from "../navbar/Header";
+import { Cards } from "./../card/Cards";
 export const Main = () => {
+  const [data, setData] = useState(null);
+
   useEffect(() => {
     fetch("https://valorant-api.com/v1/agents")
       .then((res) => {
@@ -9,15 +12,35 @@ export const Main = () => {
         }
         return res.json();
       })
-      .then((data) => console.log(data))
+      .then((res) => {
+        setData(res.data);
+        console.log(res.data);
+      })
       .catch((error) => console.error("Error:", error));
   }, []);
 
   return (
     <>
       <Header></Header>
-      <main className="h-[900px] bg-purple-100 px-10 py-5 dark:bg-gray-800">
-        <div className="dark:text-purple-100">Tus favoritos</div>
+      <main className=" bg-purple-100 p-20 dark:bg-gray-800 ">
+        <div className="py-5 dark:text-purple-100">
+          <h1 className="text-center text-xl sm:text-left">Agentes</h1>
+        </div>
+        <div className="flex flex-wrap justify-center gap-14">
+          {data &&
+            data.map((personaje) => {
+              if (personaje.isPlayableCharacter) {
+                return (
+                  <Cards
+                    key={personaje.uuid}
+                    agentUuid={personaje.uuid}
+                    nombreAgente={personaje.displayName}
+                    imagen={personaje.displayIcon}
+                  ></Cards>
+                );
+              }
+            })}
+        </div>
       </main>
     </>
   );
