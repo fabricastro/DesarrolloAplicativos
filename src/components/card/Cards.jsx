@@ -1,31 +1,30 @@
-import React, { useState, useEffect } from "react";
-import { Card, CardFooter, Image, Button } from "@nextui-org/react";
-
-export const Cards = ({ agentUuid, imagen, nombreAgente }) => {
+import { useState } from "react";
+import { Card, CardFooter, Image } from "@nextui-org/react";
+import { Link } from "react-router-dom";
+export const Cards = ({ personaje }) => {
   const [isAgenteDetalleVisible, setIsAgenteDetalleVisible] = useState(false);
-
-  const handleClick = (event) => {
-    event.preventDefault();
-    window.location.href = "/details";
-  };
 
   return (
     <>
-      <button onClick={handleClick}>
+      <Link
+        to={"/details"}
+        state={{ datosPersonaje: personaje, texto: "gola" }}
+      >
         <Card isFooterBlurred radius="lg" className="border-none">
           <Image
+            isZoomed
             alt=""
             className="object-cover"
             height={200}
-            src={imagen}
+            src={personaje.displayIcon}
             width={200}
           />
           <CardFooter className=" absolute bottom-1 z-10 ml-1 w-[calc(100%_-_8px)] justify-center overflow-hidden rounded-large border-1 border-white/20 py-1 text-center shadow-small before:rounded-xl before:bg-white/10">
-            <p className="text-center text-white/80">{nombreAgente}</p>
+            <p className="text-center text-white/80">{personaje.displayName}</p>
           </CardFooter>
           {isAgenteDetalleVisible ? <AgenteDetalle /> : null}
         </Card>
-      </button>
+      </Link>
     </>
   );
 };

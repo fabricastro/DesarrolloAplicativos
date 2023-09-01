@@ -2,7 +2,7 @@ import { Login } from "./components/login/Login";
 import { Main } from "./components/Home/Main";
 import { createBrowserRouter } from "react-router-dom";
 import { RouterProvider } from "react-router-dom";
-
+import { DetailsAgent } from "./components/detailsAgent/DetailsAgent";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -11,6 +11,10 @@ const router = createBrowserRouter([
   {
     path: "/home",
     element: <Main />,
+  },
+  {
+    path: "/details",
+    element: <DetailsAgent />,
   },
 ]);
 

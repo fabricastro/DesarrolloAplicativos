@@ -14,7 +14,6 @@ export const Main = () => {
       })
       .then((res) => {
         setData(res.data);
-        console.log(res.data);
       })
       .catch((error) => console.error("Error:", error));
   }, []);
@@ -33,9 +32,7 @@ export const Main = () => {
                 return (
                   <Cards
                     key={personaje.uuid}
-                    agentUuid={personaje.uuid}
-                    nombreAgente={personaje.displayName}
-                    imagen={personaje.displayIcon}
+                    personaje={personaje}
                   ></Cards>
                 );
               }
