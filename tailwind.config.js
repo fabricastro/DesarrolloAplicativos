@@ -12,6 +12,9 @@ export default {
         oscuro: "#53212B",
         blanco: "#FFFBF5",
       },
+      fontFamily: {
+        'roboto': ['Roboto', 'sans-serif']
+      },
     },
   },
   plugins: [nextui()],
