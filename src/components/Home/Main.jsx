@@ -5,7 +5,7 @@ export const Main = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch("https://valorant-api.com/v1/agents")
+    fetch("https://valorant-api.com/v1/agents?language=es-ES" )
       .then((res) => {
         if (!res.ok) {
           throw new Error("La solicitud no fue exitosa.");

@@ -15,7 +15,12 @@ export const DetailsAgent = (datosPersonaje) => {
       <div className=" container mx-auto bg-[url('')]">
         <h1 className="py-14 text-center text-xl">Detalles del Agente</h1>
         <p> {datosAgente.displayName}</p>
-        <CardAgent imgAgente={datosAgente.fullPortrait}></CardAgent>
+        <CardAgent 
+        imgAgente={datosAgente.fullPortrait}
+        imgBg={datosAgente.background}
+        description={datosAgente.description}
+        >
+        </CardAgent>
       </div>
     </>
   );
