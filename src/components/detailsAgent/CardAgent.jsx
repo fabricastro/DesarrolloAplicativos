@@ -17,15 +17,15 @@ export const CardAgent = ({ imgAgente, imgBg, description, abilities }) => {
           />
         </div>
         <div className="w-full bg-[url()] sm:w-1/2">
-          <h1 className="pb-4 text-end text-5xl font-valorant">BIOGRAFÍA</h1>
+          <h1 className="pb-4 text-end font-valorant text-5xl">BIOGRAFÍA</h1>
           <p className="">{description}</p>
-          <Tabs aria-label="Habilities"  items={abilities}>
+          <Tabs aria-label="Habilities" items={abilities}>
             {(item) => (
               <Tab
-              className=" px-12"
+                className=" px-12"
                 key={item.slot}
                 title={
-                  <div className="flex text-center space-x-2">
+                  <div className="flex justify-center space-x-2 text-center">
                     <img
                       src={item.displayIcon}
                       alt="display icon agent"

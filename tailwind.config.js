@@ -16,8 +16,8 @@ export default {
         blanco: "#FFFBF5",
       },
       fontFamily: {
-        roboto: ["Roboto", "sans-serif"],
-        valorant: ["valorant"],
+        primary: ["Tungsten-Bold"],
+        secondary: ["DINNextW1G-Regular"],
       },
     },
   },

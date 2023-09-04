@@ -1,21 +1,67 @@
 import { useState } from "react";
-import { handleTheme } from "../../functions/handleTheme";
-import { SwitchButton } from "./SwitchButton";
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  Link,
+  Button,
+  NavbarMenuToggle,
+  NavbarMenu,
+  NavbarMenuItem,
+} from "@nextui-org/react";
 
 export const Header = () => {
-  const [darkMode, setDarkMode] = useState(false);
-  const handleDark = () => {
-    setDarkMode(!darkMode);
-    handleTheme();
-  };
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuItems = [
+    "Profile",
+    "Dashboard",
+    "Activity",
+    "Analytics",
+    "System",
+    "Deployments",
+    "My Settings",
+    "Team Settings",
+    "Help & Feedback",
+    "Log Out",
+  ];
   return (
     <>
-      <section className="flex h-32 w-full items-center justify-between bg-purple-300 px-10 dark:bg-gray-900">
-        <h1 className="text-3xl font-bold text-purple-900 dark:text-purple-200">
-          Valorant Wiki
-        </h1>
-        <SwitchButton handleMode={handleDark}></SwitchButton>
-      </section>
+      <Navbar
+        isBordered
+        isMenuOpen={isMenuOpen}
+        onMenuOpenChange={setIsMenuOpen}
+      >
+        <NavbarContent className="sm:hidden" justify="start">
+          <NavbarMenuToggle
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          />
+        </NavbarContent>
+
+        <NavbarContent className="pr-3 sm:hidden" justify="center">
+          <NavbarBrand>
+            <p className="font-bold text-inherit">ValorantWiki</p>
+          </NavbarBrand>
+        </NavbarContent>
+
+        <NavbarContent className="hidden gap-4 sm:flex" justify="center">
+          <NavbarBrand>
+            <p className="font-bold text-inherit">ValorantWiki</p>
+          </NavbarBrand>
+        </NavbarContent>
+
+        <NavbarContent justify="end">
+          <NavbarItem>
+            <Button as={Link} color="warning" href="/" variant="flat">
+              Cerrar Sesión
+            </Button>
+          </NavbarItem>
+        </NavbarContent>
+
+        <NavbarMenu>
+          <NavbarMenuItem></NavbarMenuItem>
+        </NavbarMenu>
+      </Navbar>
     </>
   );
 };

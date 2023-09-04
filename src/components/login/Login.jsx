@@ -32,7 +32,7 @@ export const Login = () => {
       <div className="flex min-h-screen  items-center justify-center bg-secondary">
         <div className="z-20 rounded-2xl bg-blanco px-12 py-12 shadow-xl">
           <div>
-            <h1 className="mb-4 cursor-pointer text-center text-3xl font-bold text-primary">
+            <h1 className="font-secondary mb-4 cursor-pointer text-center text-3xl font-bold text-primary">
               Iniciar Sesión
             </h1>
           </div>
