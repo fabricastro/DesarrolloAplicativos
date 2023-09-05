@@ -30,7 +30,7 @@ export const Maps = () => {
   }, []);
 
   return (
-    <>
+    <> 
       <Header></Header>
       <section className="bg-secondary">
         {data &&
