@@ -10,21 +10,11 @@ import {
   NavbarMenu,
   NavbarMenuItem,
 } from "@nextui-org/react";
+import { TbBrandValorant } from "react-icons/tb";
+import { AiFillGithub } from "react-icons/ai";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
-  ];
   return (
     <>
       <Navbar
@@ -45,8 +35,11 @@ export const Header = () => {
         </NavbarContent>
 
         <NavbarContent className="hidden gap-4 sm:flex" justify="center">
+          <NavbarItem>
+            <TbBrandValorant size={40} />
+          </NavbarItem>
           <NavbarBrand>
-            <p className="font-bold text-inherit">ValorantWiki</p>
+            <p className="text-[32px] font-bold text-inherit">ValorantWiki</p>
           </NavbarBrand>
         </NavbarContent>
 
@@ -59,7 +52,22 @@ export const Header = () => {
         </NavbarContent>
 
         <NavbarMenu>
-          <NavbarMenuItem></NavbarMenuItem>
+          <NavbarMenuItem className="align-middle">
+            <a
+              href="https://github.com/MatiCastr0"
+              className="inline-flex hover:text-primary "
+            >
+              Matias Castro <AiFillGithub className="px-1" size={30} />
+            </a>
+          </NavbarMenuItem>
+          <NavbarMenuItem className="align-middle">
+            <a
+              href="https://github.com/fabricastro"
+              className="inline-flex hover:text-primary "
+            >
+              Fabricio Castro <AiFillGithub className="px-1" size={30} />
+            </a>
+          </NavbarMenuItem>
         </NavbarMenu>
       </Navbar>
     </>

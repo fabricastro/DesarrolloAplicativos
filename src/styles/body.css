@@ -8,3 +8,6 @@
   src: url("../assets/fonts/DINNextW1G-Regular.ttf");
 }
 
+body {
+  font-family: "DINNextW1G-Regular";
+}

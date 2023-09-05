@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { Header } from "../navbar/Header";
 import { Cards } from "./../card/Cards";
+import {Footer} from "../footer/Footer";
 export const Main = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch("https://valorant-api.com/v1/agents?language=es-MX" )
+    fetch("https://valorant-api.com/v1/agents?language=es-MX")
       .then((res) => {
         if (!res.ok) {
           throw new Error("La solicitud no fue exitosa.");
@@ -21,24 +22,24 @@ export const Main = () => {
   return (
     <>
       <Header></Header>
-      <main className=" bg-purple-100 p-20 dark:bg-gray-800 ">
-        <div className="py-5 dark:text-purple-100">
-          <h1 className="text-center text-xl sm:text-left">Agentes</h1>
-        </div>
-        <div className="flex flex-wrap justify-center gap-16">
-          {data &&
-            data.map((personaje) => {
-              if (personaje.isPlayableCharacter) {
-                return (
-                  <Cards
-                    key={personaje.uuid}
-                    personaje={personaje}
-                  ></Cards>
-                );
-              }
-            })}
-        </div>
+      <main className=" bg-secondary py-10 ">
+        <section>
+          <div className="container mx-auto">
+            <h1 className="p-10 text-start font-primary text-6xl ">Agentes</h1>
+            <div className="flex flex-wrap justify-center gap-16">
+              {data &&
+                data.map((personaje) => {
+                  if (personaje.isPlayableCharacter) {
+                    return (
+                      <Cards key={personaje.uuid} personaje={personaje}></Cards>
+                    );
+                  }
+                })}
+            </div>
+          </div>
+        </section>
       </main>
+      <Footer></Footer>
     </>
   );
 };

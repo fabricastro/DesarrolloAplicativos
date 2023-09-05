@@ -5,7 +5,6 @@ export const Login = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  /*   const [isLoggedIn, setIsLoggedIn] = useState(false); */
 
   const handlePassword = (Event) => {
     setPassword(Event.target.value);
@@ -19,7 +18,6 @@ export const Login = () => {
       console.log(name);
       console.log(password);
       window.location.href = "/home";
-      /* setIsLoggedIn(true); */
     } else {
       console.log(name);
       console.log(password);
@@ -32,12 +30,12 @@ export const Login = () => {
       <div className="flex min-h-screen  items-center justify-center bg-secondary">
         <div className="z-20 rounded-2xl bg-blanco px-12 py-12 shadow-xl">
           <div>
-            <h1 className="font-secondary mb-4 cursor-pointer text-center text-3xl font-bold text-primary">
+            <h1 className="mb-4 cursor-pointer text-center font-secondary text-3xl font-bold text-primary">
               Iniciar Sesión
             </h1>
           </div>
           <form onSubmit={handleButton}>
-            <div className="w-[350px] space-y-4">
+            <div className="w-[280px] space-y-4 sm:w-[350px]">
               <input
                 type="text"
                 value={name}
