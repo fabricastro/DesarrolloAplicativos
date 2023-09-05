@@ -1,8 +1,10 @@
 import { Login } from "./components/login/Login";
 import { Main } from "./components/home/Home";
+import { DetailsAgent } from "./components/detailsAgent/DetailsAgent";
+import { Maps } from "./components/maps/Maps";
+
 import { createBrowserRouter } from "react-router-dom";
 import { RouterProvider } from "react-router-dom";
-import { DetailsAgent } from "./components/detailsAgent/DetailsAgent";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -15,6 +17,10 @@ const router = createBrowserRouter([
   {
     path: "/details",
     element: <DetailsAgent />,
+  },
+  {
+    path: "/maps",
+    element: <Maps />,
   },
 ]);
 

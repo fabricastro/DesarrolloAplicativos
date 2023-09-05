@@ -1,10 +1,10 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Navbar,
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-  Link,
   Button,
   NavbarMenuToggle,
   NavbarMenu,
@@ -31,7 +31,7 @@ export const Header = () => {
         <NavbarContent className="pr-3 sm:hidden" justify="center">
           <NavbarBrand>
             <p className="font-bold text-inherit">ValorantWiki</p>
-          </NavbarBrand>
+          </NavbarBrand>          
         </NavbarContent>
 
         <NavbarContent className="hidden gap-4 sm:flex" justify="center">
@@ -41,6 +41,9 @@ export const Header = () => {
           <NavbarBrand>
             <p className="text-[32px] font-bold text-inherit">ValorantWiki</p>
           </NavbarBrand>
+          <NavbarItem className="pl-3">
+            <Link to="/maps">Mapas</Link>
+          </NavbarItem>
         </NavbarContent>
 
         <NavbarContent justify="end">
