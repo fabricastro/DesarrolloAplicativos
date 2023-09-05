@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Header } from "../navbar/Header";
+import { Header } from "../Navbar/Header";
 import { Cards } from "./../card/Cards";
 import {Footer} from "../footer/Footer";
 export const Main = () => {
