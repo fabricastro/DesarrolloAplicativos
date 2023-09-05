@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Header } from "../navbar/Header";
-import { Cards } from "./../card/Cards";
+import { Cards } from "../card/Cards";
 import {Footer} from "../footer/Footer";
 export const Main = () => {
   const [data, setData] = useState(null);
