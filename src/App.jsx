@@ -1,6 +1,6 @@
 import { Login } from "./components/login/Login";
 import { Main } from "./components/home/Home";
-import { DetailsAgent } from "./components/detailsAgent/DetailsAgent";
+import { DetailsAgent } from "./components/detailsAgent/Agent";
 import { Maps } from "./components/maps/Maps";
 
 import { createBrowserRouter } from "react-router-dom";

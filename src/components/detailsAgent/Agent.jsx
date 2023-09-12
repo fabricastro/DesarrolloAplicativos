@@ -1,4 +1,4 @@
-import { CardAgent } from "./CardAgent";
+import { CardAgent } from "./DetailAgent";
 import { Header } from "../navbar/Header";
 import { useLocation, ScrollRestoration } from "react-router-dom";
 import { Button, Link } from "@nextui-org/react";
