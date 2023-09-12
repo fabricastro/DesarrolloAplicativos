@@ -54,9 +54,11 @@ export const Header = () => {
 
         <NavbarContent justify="end">
           <NavbarItem>
-            <Button as={Link} color="warning" href="/" variant="flat">
-              Cerrar Sesión
-            </Button>
+            <Link to="/">
+              <Button color="warning" variant="flat">
+                Cerrar Sesión
+              </Button>
+            </Link>
           </NavbarItem>
         </NavbarContent>
 
