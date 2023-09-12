@@ -31,18 +31,24 @@ export const Header = () => {
         <NavbarContent className="pr-3 sm:hidden" justify="center">
           <NavbarBrand>
             <p className="font-bold text-inherit">ValorantWiki</p>
-          </NavbarBrand>          
+          </NavbarBrand>
         </NavbarContent>
 
+        <NavbarBrand>
+          <TbBrandValorant size={40} />
+          <Link to="/home">
+            <p className="text-[32px] font-bold text-inherit">ValorantWiki</p>
+          </Link>
+        </NavbarBrand>
         <NavbarContent className="hidden gap-4 sm:flex" justify="center">
           <NavbarItem>
-            <TbBrandValorant size={40} />
+            <Link to="/home">Agentes</Link>
           </NavbarItem>
-          <NavbarBrand>
-            <p className="text-[32px] font-bold text-inherit">ValorantWiki</p>
-          </NavbarBrand>
           <NavbarItem className="pl-3">
             <Link to="/maps">Mapas</Link>
+          </NavbarItem>
+          <NavbarItem className="pl-3">
+            <Link to="/weapons">Armas</Link>
           </NavbarItem>
         </NavbarContent>
 
